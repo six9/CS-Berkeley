@@ -11,6 +11,7 @@ def harmonic(x, y):
 
     """
     "*** YOUR CODE HERE ***"
+    return 2 / (1/x+1/y)
 
 from math import pi
 
@@ -30,6 +31,9 @@ def pi_fraction(gap):
     """
     numerator, denominator = 3, 1
     "*** YOUR CODE HERE ***"
+    while abs(numerator/denominator - pi) > gap:
+        denominator = denominator + 1
+        numerator = round(pi * denominator)
     print(numerator, '/', denominator, '=', numerator/denominator)
 
 def nearest_two(x):
@@ -54,4 +58,13 @@ def nearest_two(x):
     """
     power_of_two = 1.0
     "*** YOUR CODE HERE ***"
+    if x<1:
+        factor=0.5
+    else:
+        factor=2
+        
+    while abs(power_of_two*factor-x)<abs(power_of_two -x):
+        power_of_two=power_of_two*factor
+    if abs(power_of_two*2-x) == abs(power_of_two -x):
+        power_of_two=power_of_two*2
     return power_of_two
