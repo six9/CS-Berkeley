@@ -29,6 +29,9 @@ def factors(n):
     1
     """
     "*** YOUR CODE HERE ***"
+    for x in range(1,n+1):
+    	if n%x==0:
+    		print n
 
 # Q10
 def fib(n):
@@ -50,4 +53,11 @@ def fib(n):
     8
     """
     "*** YOUR CODE HERE ***"
+    if n==1:
+    	return 1
+    else if n==0:
+    	return 0
+    else:
+    	return fib(n-1)+fib(n-2)
+
 
