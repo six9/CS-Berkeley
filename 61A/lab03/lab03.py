@@ -56,13 +56,13 @@ def f4():
     3
     """
     "*** YOUR CODE HERE ***"
-##    def fun():
-##        def kun(k):
-##            def hun():
-##                print(k)
-##            return hun
-##        return kun
-##    return fun
+	def fun():
+	    def kun(k):
+	        def hun():
+	            print(k)
+	        return hun
+	    return kun
+	return fun
     
     
 

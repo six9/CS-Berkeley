@@ -25,6 +25,7 @@ def cycle(f1, f2, f3):
     19
     """
     "*** YOUR CODE HERE ***"
+    
 
 # Q10
 def lambda_curry2(func):
