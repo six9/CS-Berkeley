@@ -13,6 +13,10 @@ def g(n):
     22
     """
     "*** YOUR CODE HERE ***"
+    if n<=3:
+        return n
+    else:
+        return g(n-1)+ 2*g(n-2) + 3*g(n-3)
 
 def g_iter(n):
     """Return the value of G(n), computed iteratively.
@@ -29,9 +33,13 @@ def g_iter(n):
     22
     """
     "*** YOUR CODE HERE ***"
+    while n>3:
+        return None
+
 
 
 def has_seven(k):
+    
     """Returns True if at least one of the digits of k is a 7, False otherwise.
 
     >>> has_seven(3)
@@ -48,10 +56,16 @@ def has_seven(k):
     True
     """
     "*** YOUR CODE HERE ***"
+    if k == 0:
+        return False
+    return k % 10 == 7 or has_seven(k // 10)
+
 
 
 def pingpong(n):
     """Return the nth element of the ping-pong sequence.
+	At element k, the direction switches if k is a multiple of 7 or contains the digit 7.
+    1 2 3 4 5 6 [7] 6 5 4 3 2 1 [0] 1 2 [3] 2 1 0 [-1] 0 1 2 3 4 [5] [4] 5 6
 
     >>> pingpong(7)
     7
@@ -79,6 +93,28 @@ def pingpong(n):
     2
     """
     "*** YOUR CODE HERE ***"
+    def counter(n,index=1,add=1,sum=0):
+        if index == n:
+            return sum
+        elif index%7 == 0 or has_seven(index):
+                add = add*(-1)
+                sum += add
+                index += 1
+##                if n==index:
+##                        return sum
+                return counter(n,index,add)  
+        else:
+                index += 1
+                sum += add
+##                if n==index:
+##                        return sum
+                return counter(n,index,add)
+    return counter(n)
+
+
+
+
+
 
 
 def count_change(amount):

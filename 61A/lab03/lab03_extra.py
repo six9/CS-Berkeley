@@ -25,7 +25,20 @@ def cycle(f1, f2, f3):
     19
     """
     "*** YOUR CODE HERE ***"
-    
+    def createcycle(n):
+        if n==0:
+            return lambda x:x
+        if n==1:
+            return lambda x:f1(x)
+        if n==2:
+            return lambda x:f2(f1(x))
+        if n==3:
+            return lambda x:f3(f2(f1(x)))
+        else:
+            for n>3:
+                return lambda 
+
+    return createcycle    
 
 # Q10
 def lambda_curry2(func):
