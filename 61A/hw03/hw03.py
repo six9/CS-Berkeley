@@ -93,27 +93,28 @@ def pingpong(n):
     2
     """
     "*** YOUR CODE HERE ***"
-    def counter(n,index=1,add=1,sum=0):
+    def counter(n,index=0,add=1,sums=0):
         if index == n:
-            return sum
-        elif index%7 == 0 or has_seven(index):
-                add = add*(-1)
-                sum += add
-                index += 1
+
+            return sums
+        elif index%7 == 0 or has_seven(index) or has_seven(sums):
+            sums += add
+            index += 1
 ##                if n==index:
 ##                        return sum
-                return counter(n,index,add)  
+            print(n,index,sums)
+            add *= -1
+            return counter(n,index,add,sums)  
         else:
-                index += 1
-                sum += add
-##                if n==index:
+            index += 1
+            sums += add
+            print("hi",n,index,sums)
+#                if n==index:
 ##                        return sum
-                return counter(n,index,add)
+            return counter(n,index,add,sums)
     return counter(n)
 
-
-
-
+#pingpong(7)
 
 
 
