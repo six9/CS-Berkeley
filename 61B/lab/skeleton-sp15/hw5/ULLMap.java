@@ -1,6 +1,4 @@
 import java.util.Set; /* java.util.Set needed only for challenge problem. */
-import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 /** A data structure that uses a linked list to store pairs of keys and values.
  *  Any key must appear at most once in the dictionary, but values may appear multiple
@@ -10,94 +8,39 @@ import java.util.NoSuchElementException;
  *  For simplicity, you may assume that nobody ever inserts a null key or value
  *  into your map.
  */ 
-public class ULLMap<K, V> implements Map61B<K, V>, Iterable<K> {
+public class ULLMap { //FIX ME
     /** Keys and values are stored in a linked list of Entry objects.
       * This variable stores the first pair in this linked list. You may
       * point this at a sentinel node, or use it as a the actual front item
       * of the linked list. 
       */
     private Entry front;
-    private int size;
 
-    public Iterator<K> iterator() {
-        return new ULLMapIter();
-    }
-
-    public class ULLMapIter implements Iterator<K> {
-        private Entry p = front;
-
-        public boolean hasNext() {
-            return p != null;
-        }
-
-        public K next() {
-            if (hasNext()) {
-                K thisKey = p.key;
-                p = p.next;
-                return thisKey;
-            }
-            throw new NoSuchElementException();
-        }
-
-        public void remove() {
-            throw new UnsupportedOperationException();
-        }
+    @Override
+    public get(key) { //FIX ME
+    //FILL ME IN
+        return null; //FIX ME
     }
 
     @Override
-    public V get(K key) {
-        if (key == null) {
-            return null;
-        }
-
-        // Check if key already exists in the list.
-        Entry p = front;
-        while (p != null) {
-            if (p.key.equals(key)) {
-                return p.val;
-            }
-            p = p.next;
-        }
-
-        // Key not found in the list.
-        return null;        
+    public void put(key, val) { //FIX ME
+    //FILL ME IN
     }
 
     @Override
-    public void put(K key, V val) { 
-        if (key == null || val == null) {
-            return;
-        }
-        
-        // Check if key already exists in the list.
-        Entry p = front;
-        while (p != null) {
-            if (p.key.equals(key)) {
-                p.val = val;
-                return;
-            }
-            p = p.next;
-        }
-
-        // Key not found in the list.
-        front = new Entry(key, val, front);
-        size++;
-    }
-
-    @Override
-    public boolean containsKey(K key) {
-        return front.get(key) != null;
+    public boolean containsKey(key) { //FIX ME
+    //FILL ME IN
+        return false; //FIX ME
     }
 
     @Override
     public int size() {
-        return size;
+        return 0; // FIX ME (you can add extra instance variables if you want)
     }
 
     @Override
     public void clear() {
-        front = null;
-        size = 0;
+    //FILL ME IN
     }
 
 
@@ -107,7 +50,7 @@ public class ULLMap<K, V> implements Map61B<K, V>, Iterable<K> {
     
         /** Stores KEY as the key in this key-value pair, VAL as the value, and
          *  NEXT as the next node in the linked list. */
-        public Entry(K k, V v, Entry n) {
+        public Entry(k, v, Entry n) { //FIX ME
             key = k;
             val = v;
             next = n;
@@ -115,28 +58,15 @@ public class ULLMap<K, V> implements Map61B<K, V>, Iterable<K> {
 
         /** Returns the Entry in this linked list of key-value pairs whose key
          *  is equal to KEY, or null if no such Entry exists. */
-        public Entry get(K k) { 
-            if (key == null) {
-                return null;
-            }
-
-            // Check if key already exists in the list.
-            Entry p = front;
-            while (p != null) {
-                if (p.key.equals(k)) {
-                    return p;
-                }
-                p = p.next;
-            }
-
-            // Key not found in the list.
-            return null;
+        public Entry get(k) { //FIX ME
+            //FILL ME IN (using equals, not ==)
+            return null; //FIX ME
         }
 
         /** Stores the key of the key-value pair of this node in the list. */
-        private K key;
+        private key; //FIX ME
         /** Stores the value of the key-value pair of this node in the list. */
-        private V val;
+        private val; //FIX ME
         /** Stores the next Entry in the linked list. */
         private Entry next;
     
@@ -145,25 +75,19 @@ public class ULLMap<K, V> implements Map61B<K, V>, Iterable<K> {
     /* Methods below are all challenge problems. Will not be graded in any way. 
      * Autograder will not test these. */
     @Override
-    public V remove(K key) {
+    public remove(key) { //FIX ME SO I COMPILE
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public V remove(K key, V value) {
+    public remove(key, value) { //FIX ME SO I COMPILE
         throw new UnsupportedOperationException();
     }
 
     @Override
-    public Set<K> keySet() {
+    public Set<> keySet() { //FIX ME SO I COMPILE
         throw new UnsupportedOperationException();
     }
 
-    public static <V, K> ULLMap<V, K> invert(ULLMap<K, V> map) {
-        ULLMap<V, K> invertedMap = new ULLMap<V, K>();
-        for (K k : map) {
-            invertedMap.put(map.get(k), k);
-        }
-        return invertedMap;
-    }
+
 }

@@ -2,8 +2,6 @@ import list.EquationList;
 
 public class Calculator {
     // YOU MAY WISH TO ADD SOME FIELDS
-    private EquationList history;
-    private int historySize = 0;
 
     /**
      * TASK 2: ADDING WITH BIT OPERATIONS
@@ -15,14 +13,7 @@ public class Calculator {
      **/
     public int add(int x, int y) {
         // YOUR CODE HERE
-        int z;
-        while (x != 0) {
-            z = x & y;
-            y = x ^ y;
-            z = z << 1;
-            x = z;
-        }
-        return y;
+        return -1;
     }
 
     /**
@@ -35,26 +26,7 @@ public class Calculator {
      **/
     public int multiply(int x, int y) {
         // YOUR CODE HERE
-        // Absolute values of x and y
-        int xp = (x < 0) ? (add(~x, 1)) : x;
-        int yp = (y < 0) ? (add(~y, 1)) : y;
-        int z = 0;
-
-        // Multiply without considering the sign
-        while (yp != 0) {
-            if ((yp & 1) != 0) {
-                z = add(z, xp);
-            }
-            xp = xp << 1;
-            yp = yp >> 1;
-        }
-
-        // Determine the sign before returning the result
-        if ((x ^ y) < 0) {
-            return add(~z, 1);
-        } else {
-            return z;
-        }
+        return -1;
     }
 
     /**
@@ -68,12 +40,6 @@ public class Calculator {
      **/
     public void saveEquation(String equation, int result) {
         // YOUR CODE HERE
-        if (history == null) {
-            history = new EquationList(equation, result, null);
-        } else {
-            history = new EquationList(equation, result, history);            
-        }
-        historySize++;
     }
 
     /**
@@ -85,7 +51,6 @@ public class Calculator {
      **/
     public void printAllHistory() {
         // YOUR CODE HERE
-        printHistory(historySize);
     }
 
     /**
@@ -97,16 +62,6 @@ public class Calculator {
      **/
     public void printHistory(int n) {
         // YOUR CODE HERE
-        EquationList p = history;
-        int i = 0;
-        while (p != null) {
-            if (i >= n) {
-                break;
-            }
-            System.out.println(p.equation + " = " + p.result);
-            p = p.next;
-            i++;
-        }
     }    
 
     /**
@@ -115,8 +70,6 @@ public class Calculator {
     **/
     public void undoEquation() {
         // YOUR CODE HERE
-        history = history.next;
-        historySize--;
     }
 
     /**
@@ -125,8 +78,6 @@ public class Calculator {
      **/
     public void clearHistory() {
         // YOUR CODE HERE
-        history = null;
-        historySize = 0;
     }
 
     /**
@@ -137,13 +88,7 @@ public class Calculator {
      **/
     public int cumulativeSum() {
         // YOUR CODE HERE
-        int result = 0;
-        EquationList p = history;
-        while (p != null) {
-            result += p.result;
-            p = p.next;
-        }
-        return result;
+        return -1;
     }
 
     /**
@@ -154,12 +99,6 @@ public class Calculator {
      **/
     public int cumulativeProduct() {
         // YOUR CODE HERE
-        int result = 1;
-        EquationList p = history;
-        while (p != null) {
-            result *= p.result;
-            p = p.next;
-        }
-        return result;
+        return -1;
     }
 }

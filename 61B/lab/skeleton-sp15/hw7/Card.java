@@ -26,16 +26,14 @@ public class Card {
     @Override
     public boolean equals(Object o) {
         if (o instanceof Card) {
-            Card c = (Card) o;
-            if (c.suit == this.suit && c.number == this.number) {
-                return true;
-            }
+            // YOUR CODE HERE 
         }
         return false;
     }
 
     @Override
     public int hashCode() {
-        return suit * 100 + number;
+        // YOUR CODE HERE (this is possible in one concise line)
+        return 0;
     }
 }

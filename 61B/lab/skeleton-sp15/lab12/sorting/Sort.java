@@ -240,16 +240,8 @@ public final class Sort {
 
     /** Returns true if x < y, false otherwise. */
     private static boolean less(int x, int y) {
-        SortSounds.clearRectangle(x);
-        SortSounds.clearRectangle(y);
-        SortSounds.drawRectangle(StdDraw.RED, x);
-        StdDraw.show(5);
-        SortSounds.drawRectangle(StdDraw.RED, y);
-        StdDraw.show(5);
-        SortSounds.drawRectangle(StdDraw.CYAN, x);
-        StdDraw.show(5);
-        SortSounds.drawRectangle(StdDraw.CYAN, y);
-        StdDraw.show(5);
+        /** YOUR CODE HERE! */
+        
         return x < y;
     }
 
@@ -260,21 +252,14 @@ public final class Sort {
      *  @param index2 the index of the second int to be swapped.
      **/
     private static void exch(int[] a, int index1, int index2) {
-        SortSounds.clearRectangle(index1);
-        SortSounds.clearRectangle(index2);
+        /** YOUR CODE HERE! */
 
         int tmp = a[index1];
         a[index1] = a[index2];
         a[index2] = tmp;
 
-        SortSounds.drawRectangle(StdDraw.CYAN, index1);
-        StdDraw.show(5);
-        SortSounds.play(index1);
-        SortSounds.play(index2);
-        SortSounds.drawRectangle(StdDraw.RED, index2);
-        StdDraw.show(5);
-        SortSounds.drawRectangle(StdDraw.CYAN, index2);
-        StdDraw.show(5);
+        /** YOUR CODE HERE! */
+
     }
 
 }

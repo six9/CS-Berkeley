@@ -12,13 +12,9 @@ public class ArrayList61BTest {
         List<Integer> L = new ArrayList61B<Integer>();
         L.add(5);
         L.add(10);
-        L.add(15);
-        L.add(20);
         assertTrue(L.contains(5));        
         assertFalse(L.contains(0));
-        assertEquals(5, (int) L.get(0));
-        assertEquals(15, (int) L.get(2));
-        assertEquals(4, L.size());
+
     }
 
     /** Runs tests. */

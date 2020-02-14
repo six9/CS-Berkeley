@@ -70,26 +70,7 @@ public class UserList {
     **/ 
     public static void partition(String sortFeature, CatenableQueue<User> qUnsorted, int pivot, 
         CatenableQueue<User> qLess, CatenableQueue<User> qEqual, CatenableQueue<User> qGreater){
-        while (qUnsorted.front() != null) {
-            User cur = qUnsorted.dequeue();
-            int feature;
-            if (sortFeature.equals("id")) {
-                feature = cur.getId();
-            } else if (sortFeature.equals("pages")) {
-                feature = cur.getPagesPrinted();
-            } else {
-                System.out.println("Error: Unknown sortFeature!");
-                return;
-            }
-
-            if (feature < pivot) {
-                qLess.enqueue(cur);
-            } else if (feature > pivot) {
-                qGreater.enqueue(cur);
-            } else {
-                qEqual.enqueue(cur);
-            }                
-        }
+        //Replace with solution.
     }
 
     /**
@@ -100,35 +81,7 @@ public class UserList {
     *   @param q is an unsorted CatenableQueue containing User items.
     **/
     public static void quickSort(String sortFeature, CatenableQueue<User> q){ 
-        CatenableQueue<User> less = new CatenableQueue<User>();
-        CatenableQueue<User> equal = new CatenableQueue<User>();
-        CatenableQueue<User> greater = new CatenableQueue<User>();
-        CatenableQueue<User> sorted = new CatenableQueue<User>();
-        int pivot;
-
-        if (q.front() == null) {
-            return;
-        }
-
-        if (sortFeature.equals("id")) {
-            pivot = q.front().getId();
-        } else if (sortFeature.equals("pages")) {
-            pivot = q.front().getPagesPrinted();
-        } else {
-            System.out.println("Error: Unknown sortFeature!");
-            return;
-        }
-
-        partition(sortFeature, q, pivot, less, equal, greater);
-        quickSort(sortFeature, less);
-        quickSort(sortFeature, greater);
-        sorted.append(less);
-        sorted.append(equal);
-        sorted.append(greater);
-
-        while (sorted.front() != null) {
-            q.enqueue(sorted.dequeue());
-        }
+        //Replace with solution.
     }
 
     /**
@@ -148,13 +101,8 @@ public class UserList {
     *    contains one User from userQueue.
     **/
     public CatenableQueue<CatenableQueue<User>> makeQueueOfQueues(){
-        CatenableQueue<CatenableQueue<User>> result = new CatenableQueue<CatenableQueue<User>>();
-        while (userQueue.front() != null) {
-            CatenableQueue<User> q = new CatenableQueue<User>();
-            q.enqueue(userQueue.dequeue());
-            result.enqueue(q);
-        }
-        return result;
+        //Replace with solution.
+        return null;
     }
 
     /**
@@ -170,41 +118,8 @@ public class UserList {
     *       sorted from smallest to largest by their sortFeature.
     **/
     public static CatenableQueue<User> mergeTwoQueues(String sortFeature, CatenableQueue<User> q1, CatenableQueue<User> q2){
-        CatenableQueue<User> mergedQueue = new CatenableQueue<User>();
-
-        while (q1.front() != null && q2.front() != null) {
-            int f1, f2;
-            if (sortFeature.equals("id")) {
-                f1 = q1.front().getId();
-                f2 = q2.front().getId();
-            } else if (sortFeature.equals("pages")) {
-                f1 = q1.front().getPagesPrinted();
-                f2 = q2.front().getPagesPrinted();
-            } else {
-                System.out.println("Error: Unknown sortFeature!");
-                return null;
-            }
-
-            if (f1 <= f2) { // equal sign required to ensure stability of mergesort.
-                mergedQueue.enqueue(q1.dequeue());
-            } else {
-                mergedQueue.enqueue(q2.dequeue());
-            }
-        }
-
-        // handle corner cases
-        if (q1.front() == null) {
-            while (q2.front() != null) {
-                mergedQueue.enqueue(q2.dequeue());
-            }
-        }
-        if (q2.front() == null) {
-            while (q1.front() != null) {
-                mergedQueue.enqueue(q1.dequeue());
-            }
-        }
-
-        return mergedQueue;
+        //Replace with solution.
+        return null;
     }
 
     /**
@@ -215,16 +130,7 @@ public class UserList {
     *       printed, sortFeatures equals "pages".
     **/
     public void mergeSort(String sortFeature){
-        CatenableQueue<CatenableQueue<User>> qoq = makeQueueOfQueues();
-        while (qoq.size() > 1) {
-            // dequeue two items, merge them as one, enqueue it back.
-            qoq.enqueue(mergeTwoQueues(sortFeature, qoq.dequeue(), qoq.dequeue()));
-        }
-
-        CatenableQueue<User> result = qoq.dequeue();
-        while (result.front() != null) {
-            userQueue.enqueue(result.dequeue());
-        }
+        //Replace with solution.
     }
 
     /**
@@ -232,9 +138,7 @@ public class UserList {
     *   If two Users have printed the same number of pages, the User with the smaller user ID is first.
     **/
     public void sortByBothFeatures(){
-        // mergesort is stable, while quicksort isn't.
-        mergeSort("id");
-        mergeSort("pages");
+        //Replace with solution. Don't overthink this one!
     }
 
 
@@ -354,7 +258,7 @@ public class UserList {
         // your code is bug-free!
 
         // Uncomment the following line when ready
-        jh61b.junit.textui.runClasses(UserList.class);
+        // jh61b.junit.textui.runClasses(UserList.class);
     }
 
 }

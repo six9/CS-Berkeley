@@ -23,21 +23,9 @@ public class FibonacciMemo {
      * @param n
      * @return The nth fibonacci number
      */
-
-    private static HashMap<Integer, Integer> fibHM = new HashMap<Integer, Integer>();
-
     public static int fibMemo(int n) {
-        if (fibHM.containsKey(n)) {
-            return fibHM.get(n);
-        }
-        if (n <= 1) {
-            return n;
-        }
-        
-        int result;
-        result = fibMemo(n - 2) + fibMemo(n - 1);
-        fibHM.put(n, result);
-        return result;
+        // YOUR CODE HERE
+        return 0;
     }
 
     /**
@@ -46,8 +34,8 @@ public class FibonacciMemo {
      * as the 47th Fibonacci number?
      */
     public static String why47() {
-        String answer = "Because 2,971,215,073 exceeds the range of int, ";
-        answer += "and long must be used if you want correct result.";
+        String answer = "potatoes";
+        answer += ", " + answer + " and tapioca";
         return answer;
     }
 
@@ -57,17 +45,12 @@ public class FibonacciMemo {
         m += "\n" + "He was the son of a wealthy merchant.\n";
         System.out.println(m);
         System.out.println("0: " + FibonacciMemo.fibMemo(0));
-        System.out.println("1: " + FibonacciMemo.fibMemo(1));
-        System.out.println("2: " + FibonacciMemo.fibMemo(2));
-        System.out.println("3: " + FibonacciMemo.fibMemo(3));
-        System.out.println("4: " + FibonacciMemo.fibMemo(4));
+        System.out.println("1: " + FibonacciMemo.fibNoMemo(1));
+        System.out.println("2: " + FibonacciMemo.fibNoMemo(2));
+        System.out.println("3: " + FibonacciMemo.fibNoMemo(3));
+        System.out.println("4: " + FibonacciMemo.fibNoMemo(4));
 
         // 46th Fibonacci = 1,836,311,903
-        System.out.println("46: " + FibonacciMemo.fibMemo(46));
         // 47th Fibonacci = 2,971,215,073
-        System.out.println("47: " + FibonacciMemo.fibMemo(47));
-
-        System.out.println("Why does even a correctly implemented fibMemo not return 2,971,215,073 as the 47th Fibonacci number?");
-        System.out.println(why47());
     }
 }

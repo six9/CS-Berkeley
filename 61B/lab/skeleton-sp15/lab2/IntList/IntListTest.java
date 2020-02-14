@@ -20,9 +20,9 @@ public class IntListTest {
 
     @Test
     public void testdSquareList() {
-        IntList L = IntList.list(1, 2, 3);
-        IntList.dSquareList(L);
-        assertEquals(IntList.list(1, 4, 9), L);
+      IntList L = IntList.list(1, 2, 3);
+      IntList.dSquareList(L);
+      assertEquals(IntList.list(1, 4, 9), L);
     }
 
     /** Do not use the new keyword in your tests. You can create
@@ -38,38 +38,7 @@ public class IntListTest {
      */
 
     //TODO:  Create testSquareListRecursive()
-    @Test
-    public void testSquareListRecursive() {
-        IntList L = IntList.list(1, 2, 3);
-        IntList result = IntList.squareListRecursive(L);
-        assertEquals(IntList.list(1, 4, 9), result);
-    }
-
     //TODO:  Create testDcatenate and testCatenate
-    @Test
-    public void testDcatenate() {
-        IntList A = IntList.list(1, 2, 3);
-        IntList B = IntList.list(4, 5, 6);
-        IntList result = IntList.dcatenate(A, B);
-        assertEquals(IntList.list(1, 2, 3, 4, 5, 6), result);
-        assertEquals(IntList.list(1, 2, 3, 4, 5, 6), A);
-        A = null;
-        result = IntList.dcatenate(A, B);
-        assertEquals(IntList.list(4, 5, 6), result);
-    }
-
-    @Test
-    public void testCatenate() {
-        IntList A = IntList.list(1, 2, 3);
-        IntList B = IntList.list(4, 5, 6);
-        IntList result = IntList.catenate(A, B);
-        assertEquals(IntList.list(1, 2, 3, 4, 5, 6), result);
-        assertEquals(IntList.list(1, 2, 3), A);
-        A = null;
-        result = IntList.catenate(null, B);
-        assertEquals(IntList.list(4, 5, 6), result);
-        assertEquals(null, A);               
-    }
 
     /* Run the unit tests in this file. */
     public static void main(String... args) {

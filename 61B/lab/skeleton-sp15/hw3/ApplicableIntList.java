@@ -12,63 +12,29 @@ public class ApplicableIntList{
 
     /** A list with head HEAD0 and tail TAIL0. */
     public ApplicableIntList(int head0, ApplicableIntList tail0) {
-        head = head0;
-        tail = tail0;
+        // REPLACE THIS LINE WITH YOUR SOLUTION
     }
 
     /** A list with null tail, and head = 0. */
     public ApplicableIntList() {
-        head = 0;
-        tail = null;
+        // REPLACE THIS LINE WITH YOUR SOLUTION
     }
 
     /** Inserts int i into its correct location, doesn't handle cycles. */
     public void insert(int i) {
-        if (i < head) {
-            tail = new ApplicableIntList(head, tail);
-            head = i;
-        } else {
-            ApplicableIntList l = this;
-            while (l.tail != null && i > l.tail.head) {
-                l = l.tail;
-            }
-            l.tail = new ApplicableIntList(i, l.tail);
-        }
+        // REPLACE THIS LINE WITH YOUR SOLUTION
     }
 
     /** Returns the i-th int in this list.
      *  The first element, which is in location 0, is the 0th element.
      *  Assume i takes on the values [0, length of list - 1]. */
     public int get(int i) {
-        if (i == 0) {
-            return head;
-        } else {
-            ApplicableIntList l = this;
-            for (int j = 0; j < i; j++) {
-                l = l.tail;
-            }
-            return l.head;
-        }
+        // REPLACE THIS LINE WITH YOUR SOLUTION
     }
 
     /** Applies the function f to every item in this list. */
     public void apply(IntUnaryFunction f) {
-        ApplicableIntList l = this;
-
-        while (l != null) {
-            l.head = f.apply(l.head);
-            l = l.tail;
-        }
-
-        ApplicableIntList lp = new ApplicableIntList(head, null);
-        l = this.tail;
-        while (l != null) {
-            lp.insert(l.head);
-            l = l.tail;
-        }
-
-        head = lp.head;
-        tail = lp.tail;
+        // REPLACE THIS LINE WITH YOUR SOLUTION
     }
 
     /** Returns NULL if no cycle exists, else returns cycle location. */

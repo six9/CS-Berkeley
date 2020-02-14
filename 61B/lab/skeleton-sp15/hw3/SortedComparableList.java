@@ -12,56 +12,29 @@ public class SortedComparableList {
 
     /** A list with head HEAD0 and tail TAIL0. */
     public SortedComparableList(Comparable head0, SortedComparableList tail0) {
-        head = head0;
-        tail = tail0;
+        // REPLACE THIS LINE WITH YOUR SOLUTION
     }
 
     /** A list with null tail, and head = 0. */
     public SortedComparableList(){
-        head = 0;
-        tail = null;
+        // REPLACE THIS LINE WITH YOUR SOLUTION
     }
 
     /** Inserts Comparable c into its correct location in this list. */
     public void insert(Comparable c) {
-        if (c == null) {
-            return;
-        }
-        if (c.compareTo(head) < 0) {
-            tail = new SortedComparableList(head, tail);
-            head = c;
-        } else {
-            SortedComparableList l = this;
-            while (l.tail != null && c.compareTo(l.tail.head) > 0) {
-                l = l.tail;
-            }
-            l.tail = new SortedComparableList(c, l.tail);
-        }
+        // REPLACE THIS LINE WITH YOUR SOLUTION
     }
 
     /** Returns the i-th int in this list.
      *  The first element, which is in location 0, is the 0th element.
      *  Assume i takes on the values [0, length of list - 1]. */
     public Comparable get(int i) {
-        if (head == null || i == 0) {
-            return head;
-        } else {
-            SortedComparableList l = this;
-            for (int j = 0; j < i; j++) {
-                l = l.tail;
-            }
-            return l.head;
-        }
-        
+        return null; // REPLACE THIS LINE WITH YOUR SOLUTION
     }
 
     /** Adds every item in THAT to this list. */
     public void extend(SortedComparableList that) {
-        SortedComparableList l = that;
-        while (l != null) {
-            insert(l.head);
-            l = l.tail;
-        }
+        // REPLACE THIS LINE WITH YOUR SOLUTION
     }
 
     /** Returns a list consisting of the elements of L starting from
@@ -70,11 +43,7 @@ public class SortedComparableList {
       *
       * This method should NOT modify L. */
     public static SortedComparableList subTail(SortedComparableList L, int start) {
-        if (L == null || start == 0) {
-            return L;
-        } else {
-            return subTail(L.tail, start - 1);
-        }
+        return null; // REPLACE THIS LINE WITH YOUR SOLUTION
     }
 
     /** Returns the sublist consisting of LEN items from list L,
@@ -84,27 +53,12 @@ public class SortedComparableList {
      *  Assume START and END are >= 0.
      */
     public static SortedComparableList sublist(SortedComparableList L, int start, int len) {
-        if (L == null || len == 0) {
-            return null;
-        } else if (start > 0) {
-            return sublist(L.tail, start - 1, len);
-        } else {
-            return new SortedComparableList(L.head, sublist(L.tail, 0, len - 1));
-        }
+        return null; // REPLACE THIS LINE WITH YOUR SOLUTION
     }
 
     /** Removes items from L at position len+1 and later. */
     public static void expungeTail(SortedComparableList L, int len) {
-        if (L == null) {
-            return;
-        }
-        SortedComparableList l = L;
-        int i = 0;
-        while (l != null && i < len) {
-            l = l.tail;
-            i++;
-        }
-        l.tail = null;
+        // REPLACE THIS LINE WITH YOUR SOLUTION
     }
 
     /**
@@ -120,19 +74,7 @@ public class SortedComparableList {
      *  output list is [ 0 1 3 4 ].
      **/
     public void squish() {
-        if (tail == null) {
-            return;
-        }
-        SortedComparableList prev = this;
-        SortedComparableList curr = tail;
-        while (curr != null) {
-            if (prev.head.equals(curr.head)) {
-                prev.tail = curr.tail;
-            } else {
-                prev = prev.tail;
-            }
-            curr = curr.tail;
-        }
+        // REPLACE THIS LINE WITH YOUR SOLUTION
     }
 
     /** Duplicates each Comparable so that for every original
@@ -149,11 +91,7 @@ public class SortedComparableList {
      *  duplicate.
      **/
     public void twin() {
-        SortedComparableList l = this;
-        while (l != null) {
-            l.tail = new SortedComparableList(l.head, l.tail);
-            l = l.tail.tail;
-        }
+        // REPLACE THIS LINE WITH YOUR SOLUTION
     }
 
     /** Returns NULL if no cycle exists, else returns cycle location. */

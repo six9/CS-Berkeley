@@ -62,6 +62,7 @@ public class Asymptotics {
         }
     }
 
+
     public static void function3(long n) {
         ArrayList<Integer> a = new ArrayList<Integer>();
         for (int i = 0; i < n; i++){
@@ -75,39 +76,13 @@ public class Asymptotics {
     /** Fill in the body of this function so that its running time is
      *  n^(1/2) and so that it returns true if and only if n is prime. */
     public static boolean function4(long n) {
-        ArrayList<Integer> a = new ArrayList<Integer>();
-        long nSqrt = (long) Math.ceil(Math.sqrt(n));
-        for (long i = 2; i <= nSqrt; i++) {
-            // Do something meaningless to make the time measurable.
-            for (int j = 0; j < nSqrt; j++) { 
-                a.add(0);
-                a.clear();
-            }
-            if (n % i == 0) {
-                return true;
-            }
-        }
-        return false;
+	return false; //FIX ME
     }
 
     /** Fill in the body of this function so that its best case running
      *  time is log(n) and its worst case running time is n. */
     public static void function5(long n) {
-        ArrayList<Integer> a = new ArrayList<Integer>();
-        if (n % 2 == 0) {
-            for (long i = 1; i <= n; i *= 2) {
-                // Do something meaningless to make the time measurable.
-                for (int j = 0; j < 1e7; j++) { 
-                    a.add(0);
-                    a.clear();
-                }
-            }
-        } else {
-            for (long i = 1; i <= n; i++) {
-                a.add(0);
-                a.clear();
-            }
-        }
+        //FILL ME IN
     }
 
     public static void usage() {

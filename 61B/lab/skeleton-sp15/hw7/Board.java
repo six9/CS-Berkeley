@@ -22,32 +22,11 @@ public class Board {
 
 	@Override
 	public boolean equals(Object o) {
-        if (o instanceof Board) {
-            Board b = (Board) o;
-            if (this.SIZE == b.SIZE && this.isFireTurn == b.isFireTurn) {
-                for (int i = 0; i < SIZE; i++) {
-                    for (int j = 0; j < SIZE; j++) {
-                        if (!this.pieces[i][j].equals(b.pieces[i][j])) {
-                            return false;
-                        }
-                    }
-                }
-                return true;
-            }
-        }
-        return false;
+        return true; // YOUR CODE HERE
 	}
 
-    /* Obviously not a good hashCode()! But I have no idea... */
     @Override
     public int hashCode() {
-        int hash = 0;
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                int k = (i + j) % 32;
-                hash += pieces[i][j].hashCode() << k;
-            }
-        }
-        return hash;
+        return 6; // YOUR CODE HERE
     }
 }
